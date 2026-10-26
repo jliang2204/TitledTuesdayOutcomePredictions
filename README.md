@@ -42,6 +42,7 @@ are not live ratings. The current two-feature model does not use round number.
 ## Decisions and trade-offs
 
 **Data Split**
+
 Rather than a fixed train/validation/test split, an expanding-window validation split by each tournament was used:
 
 | Fold | Training events | Validation event |
@@ -54,22 +55,25 @@ I used an expanding-window walk-forward validation to preserve the chronological
 There was no separate hold-out test because the hold-out test was initially opened and then changes were made later, I moved it to validation rather than pretending it was an untouched test set.
 
 **Feature Choices**
+
 The two main features selected were average rating ((white + black) / 2) and rating difference (white - black). I chose average rating and rating difference over individual White/Black ratings because it gives a better view of the relative matchup strength. Both features provide the same information as the individual ratings, but give a different representation on the matchup. 
 An initial larger feature set of average rating, rating difference, absolute rating difference, round number, white's score prior to round, and black's score prior to round was tested, but after testing the feature subsets, the additional features did not meaningfully improve validation log loss compared to the simple logistic regression model using only average rating and rating difference, which consistently performed the best. I think this is partly related to the limitations of the dataset, where I believe data that could provide useful features (mainly in player statistics outside of just the Titled Tuesday data) would require a lot more complexity, but would be the logical step given a larger time frame.
 The three models I tested were logistic regression, random forest, and gradient boosting where logistic regression using only average rating and rating difference had the lowest mean log loss of the three across the board.
 C=0.1 was chosen automatically by the pipeline for the regularization after testing C = 0.1, 1, and 10 since it achieved the lowest mean validation log loss. However, the overall results from all three values of C were small in difference.
 
 **Data Leakage**
+
 Initially, the ratings provided in the game's PGN and API records were used, but on review it was shown that these ratings can show future information based on the game depending on the outcome of the game. To fix this, the ratings used from the most recently observed game (assuming the provided ratings are post-game ratings) were used. When there wasn't a previously observed rating, a median imputation was fitted on the training data within each fold.
 
 **Honest Model Overview**
+
 I think the 2 feature Logistic Regression model is able to generalize the probabilities of white's outcomes between two specific ratings from this Titled Tuesday dataset decently but has a lot of limitations. The main limitation is that the model is not provided any features that give any sort of history of each player about their playstyle or number of games played, for instance a 2600 that has 3000 games played can be very different from a 2600 that has 5 games played, but this information is not captured in the model. Missing player rating data (which was about 6.9% of the dataset) was also accounted for by using a median of historical ratings observed in the training data, which is not entirely accurate. The mean fold log loss was 0.790823 with a mean fold accuracy of 67.60%. The frequency baseline log loss averaged 0.916226. Despite this 13.69% improvement in log loss, the limitations described above still leave the model not a perfect representation.
 
 **AI Transcript**
 
 The AI Transcript can be found in agent_transcript.md
 
-**Time breakdown**
+**Time Breakdown**
 
 I estimate spending approximately 1 hour and 45 minutes total:
 
