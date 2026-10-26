@@ -1,0 +1,9 @@
+feature_set,model,parameters,validation_log_loss,validation_accuracy
+with_scores,frequency_baseline,{},0.9355562071453811,0.4815354713313897
+with_scores,gradient_boosting,"{'max_leaf_nodes': 7, 'max_iter': 100}",0.8221267086771719,0.6593780369290574
+with_scores,logistic_regression,{'C': 0.1},0.8150715777119518,0.6637512147716229
+with_scores,random_forest,"{'max_depth': 5, 'min_samples_leaf': 30}",0.8196072898742495,0.6647230320699709
+without_scores,frequency_baseline,{},0.9355562071453811,0.4815354713313897
+without_scores,gradient_boosting,"{'max_leaf_nodes': 7, 'max_iter': 100}",0.8242536404457588,0.6588921282798834
+without_scores,logistic_regression,{'C': 0.1},0.8148049863181899,0.6647230320699709
+without_scores,random_forest,"{'max_depth': 5, 'min_samples_leaf': 30}",0.8168006389650085,0.6642371234207969

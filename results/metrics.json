@@ -1,0 +1,289 @@
+{
+  "primary_metric": "multiclass_log_loss",
+  "classes": [
+    "draw",
+    "loss",
+    "win"
+  ],
+  "features": [
+    "rating_difference",
+    "average_rating",
+    "absolute_rating_difference",
+    "white_score_before_round",
+    "black_score_before_round",
+    "round"
+  ],
+  "seed": 42,
+  "data_sha256": "32307a18af81929cd552467ee3e1e06c998d26e04b7dc6b91841c5aee217cf56",
+  "versions": {
+    "python": "3.11.9",
+    "sklearn": "1.9.1",
+    "pandas": "3.1.0",
+    "numpy": "2.4.6"
+  },
+  "splits": {
+    "train": {
+      "rows": 6776,
+      "dates": [
+        "2026-09-22",
+        "2026-09-29",
+        "2026-10-06"
+      ],
+      "class_counts": {
+        "win": 3385,
+        "loss": 2873,
+        "draw": 518
+      }
+    },
+    "validation": {
+      "rows": 2058,
+      "dates": [
+        "2026-10-13"
+      ],
+      "class_counts": {
+        "win": 991,
+        "loss": 879,
+        "draw": 188
+      }
+    },
+    "test": {
+      "rows": 1965,
+      "dates": [
+        "2026-10-20"
+      ],
+      "class_counts": {
+        "win": 946,
+        "loss": 859,
+        "draw": 160
+      }
+    }
+  },
+  "validation_candidates": [
+    {
+      "model": "frequency_baseline",
+      "parameters": {},
+      "validation_log_loss": 0.9355562071453811,
+      "validation_accuracy": 0.4815354713313897
+    },
+    {
+      "model": "logistic_regression",
+      "parameters": {
+        "C": 0.1
+      },
+      "validation_log_loss": 0.8150715777119518,
+      "validation_accuracy": 0.6637512147716229
+    },
+    {
+      "model": "logistic_regression",
+      "parameters": {
+        "C": 1.0
+      },
+      "validation_log_loss": 0.8155461124185627,
+      "validation_accuracy": 0.6647230320699709
+    },
+    {
+      "model": "logistic_regression",
+      "parameters": {
+        "C": 10.0
+      },
+      "validation_log_loss": 0.8156768266933279,
+      "validation_accuracy": 0.6647230320699709
+    },
+    {
+      "model": "random_forest",
+      "parameters": {
+        "max_depth": 5,
+        "min_samples_leaf": 10
+      },
+      "validation_log_loss": 0.8199179519238813,
+      "validation_accuracy": 0.6637512147716229
+    },
+    {
+      "model": "random_forest",
+      "parameters": {
+        "max_depth": 5,
+        "min_samples_leaf": 30
+      },
+      "validation_log_loss": 0.8196072898742496,
+      "validation_accuracy": 0.6647230320699709
+    },
+    {
+      "model": "random_forest",
+      "parameters": {
+        "max_depth": 10,
+        "min_samples_leaf": 10
+      },
+      "validation_log_loss": 0.826653753919958,
+      "validation_accuracy": 0.6593780369290574
+    },
+    {
+      "model": "random_forest",
+      "parameters": {
+        "max_depth": 10,
+        "min_samples_leaf": 30
+      },
+      "validation_log_loss": 0.8226591658569608,
+      "validation_accuracy": 0.6632653061224489
+    },
+    {
+      "model": "gradient_boosting",
+      "parameters": {
+        "max_leaf_nodes": 7,
+        "max_iter": 100
+      },
+      "validation_log_loss": 0.8221267086771719,
+      "validation_accuracy": 0.6593780369290574
+    },
+    {
+      "model": "gradient_boosting",
+      "parameters": {
+        "max_leaf_nodes": 7,
+        "max_iter": 200
+      },
+      "validation_log_loss": 0.8304450001572933,
+      "validation_accuracy": 0.6579203109815355
+    },
+    {
+      "model": "gradient_boosting",
+      "parameters": {
+        "max_leaf_nodes": 15,
+        "max_iter": 100
+      },
+      "validation_log_loss": 0.8302400709727603,
+      "validation_accuracy": 0.6603498542274052
+    },
+    {
+      "model": "gradient_boosting",
+      "parameters": {
+        "max_leaf_nodes": 15,
+        "max_iter": 200
+      },
+      "validation_log_loss": 0.8503263063669332,
+      "validation_accuracy": 0.6516034985422741
+    }
+  ],
+  "selected": {
+    "model": "logistic_regression",
+    "parameters": {
+      "C": 0.1
+    },
+    "validation_log_loss": 0.8150715777119518,
+    "validation_accuracy": 0.6637512147716229
+  },
+  "test_selected": {
+    "log_loss": 0.7965604662301516,
+    "accuracy": 0.6697201017811705,
+    "classification_report": {
+      "draw": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 160.0
+      },
+      "loss": {
+        "precision": 0.6570477247502775,
+        "recall": 0.689173457508731,
+        "f1-score": 0.6727272727272727,
+        "support": 859.0
+      },
+      "win": {
+        "precision": 0.6804511278195489,
+        "recall": 0.7653276955602537,
+        "f1-score": 0.7203980099502487,
+        "support": 946.0
+      },
+      "accuracy": 0.6697201017811705,
+      "macro avg": {
+        "precision": 0.4458329508566088,
+        "recall": 0.48483371768966155,
+        "f1-score": 0.46437509422584045,
+        "support": 1965.0
+      },
+      "weighted avg": {
+        "precision": 0.614814637393273,
+        "recall": 0.6697201017811705,
+        "f1-score": 0.6409003789748919,
+        "support": 1965.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        0,
+        87,
+        73
+      ],
+      [
+        0,
+        592,
+        267
+      ],
+      [
+        0,
+        222,
+        724
+      ]
+    ]
+  },
+  "test_frequency_baseline": {
+    "log_loss": 0.9182681458879878,
+    "accuracy": 0.4814249363867684,
+    "classification_report": {
+      "draw": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 160.0
+      },
+      "loss": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 859.0
+      },
+      "win": {
+        "precision": 0.4814249363867684,
+        "recall": 1.0,
+        "f1-score": 0.6499484713156991,
+        "support": 946.0
+      },
+      "accuracy": 0.4814249363867684,
+      "macro avg": {
+        "precision": 0.16047497879558947,
+        "recall": 0.3333333333333333,
+        "f1-score": 0.21664949043856638,
+        "support": 1965.0
+      },
+      "weighted avg": {
+        "precision": 0.23176996937500405,
+        "recall": 0.4814249363867684,
+        "f1-score": 0.3129014014578378,
+        "support": 1965.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        0,
+        0,
+        160
+      ],
+      [
+        0,
+        0,
+        859
+      ],
+      [
+        0,
+        0,
+        946
+      ]
+    ]
+  },
+  "score_definition": "Observed earlier-round game points completed before start; excludes unrecorded bye/forfeit awards.",
+  "rating_definition": "Latest strictly earlier completed collected game's post-game rating; missing derived rating features use training-only median imputation.",
+  "missing_rating_feature_rows": {
+    "train": 573,
+    "validation": 94,
+    "test": 82
+  },
+  "evaluation_note": "Leakage correction after original test evaluation. Same predefined search and dates; test is no longer a previously unseen event."
+}

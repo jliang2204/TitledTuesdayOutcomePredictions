@@ -1,0 +1,13 @@
+feature_set,model,parameters,validation_log_loss,validation_accuracy
+ratings_only,frequency_baseline,{},0.9355562071453811,0.4815354713313897
+ratings_only,gradient_boosting,"{'max_leaf_nodes': 7, 'max_iter': 100}",0.821156291350136,0.6618075801749271
+ratings_only,logistic_regression,{'C': 10.0},0.8111225178451192,0.6647230320699709
+ratings_only,random_forest,"{'max_depth': 5, 'min_samples_leaf': 30}",0.8157886544001285,0.6642371234207969
+ratings_plus_absolute,frequency_baseline,{},0.9355562071453811,0.4815354713313897
+ratings_plus_absolute,gradient_boosting,"{'max_leaf_nodes': 7, 'max_iter': 100}",0.8253774630972712,0.6603498542274052
+ratings_plus_absolute,logistic_regression,{'C': 0.1},0.8148074560750208,0.6647230320699709
+ratings_plus_absolute,random_forest,"{'max_depth': 5, 'min_samples_leaf': 30}",0.8214486759704122,0.6637512147716229
+ratings_plus_round,frequency_baseline,{},0.9355562071453811,0.4815354713313897
+ratings_plus_round,gradient_boosting,"{'max_leaf_nodes': 7, 'max_iter': 100}",0.8210610338060917,0.6608357628765792
+ratings_plus_round,logistic_regression,{'C': 0.1},0.8123458804465926,0.6642371234207969
+ratings_plus_round,random_forest,"{'max_depth': 5, 'min_samples_leaf': 10}",0.8191858982330671,0.6642371234207969

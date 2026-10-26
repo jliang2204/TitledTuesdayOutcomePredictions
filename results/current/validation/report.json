@@ -1,0 +1,202 @@
+{
+  "method": "expanding_window_by_tournament",
+  "primary_metric": "equal_event_mean_log_loss",
+  "secondary_metric": "game_weighted_pooled_log_loss",
+  "seed": 42,
+  "feature_sets": {
+    "ratings_only": [
+      "rating_difference",
+      "average_rating"
+    ],
+    "ratings_plus_absolute": [
+      "rating_difference",
+      "average_rating",
+      "absolute_rating_difference"
+    ],
+    "ratings_plus_round": [
+      "rating_difference",
+      "average_rating",
+      "round"
+    ]
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "train_dates": [
+        "2026-09-22",
+        "2026-09-29"
+      ],
+      "validation_date": "2026-10-06",
+      "train_rows": 4523,
+      "validation_rows": 2253,
+      "train_missing_rating_rows": 434,
+      "validation_missing_rating_rows": 139
+    },
+    {
+      "fold": 2,
+      "train_dates": [
+        "2026-09-22",
+        "2026-09-29",
+        "2026-10-06"
+      ],
+      "validation_date": "2026-10-13",
+      "train_rows": 6776,
+      "validation_rows": 2058,
+      "train_missing_rating_rows": 573,
+      "validation_missing_rating_rows": 94
+    },
+    {
+      "fold": 3,
+      "train_dates": [
+        "2026-09-22",
+        "2026-09-29",
+        "2026-10-06",
+        "2026-10-13"
+      ],
+      "validation_date": "2026-10-20",
+      "train_rows": 8834,
+      "validation_rows": 1965,
+      "train_missing_rating_rows": 667,
+      "validation_missing_rating_rows": 82
+    }
+  ],
+  "imputation_comparison": false,
+  "imputation": "player",
+  "data_sha256": "32307a18af81929cd552467ee3e1e06c998d26e04b7dc6b91841c5aee217cf56",
+  "separate_test_held_out": false,
+  "october_20_used_as_validation": true,
+  "selected": {
+    "feature_set": "ratings_only",
+    "model": "logistic_regression",
+    "parameters": "{\"C\": 0.1}",
+    "folds": 3,
+    "mean_log_loss": 0.7908225943105278,
+    "std_log_loss": 0.011605671384538245,
+    "pooled_log_loss": 0.790419501521369,
+    "mean_accuracy": 0.675975897858898
+  },
+  "best_by_model": [
+    {
+      "feature_set": "ratings_only",
+      "model": "frequency_baseline",
+      "parameters": "{}",
+      "folds": 3,
+      "mean_log_loss": 0.9162259097276668,
+      "std_log_loss": 0.020428121772890117,
+      "pooled_log_loss": 0.9155315865902184,
+      "mean_accuracy": 0.4881712973204631
+    },
+    {
+      "feature_set": "ratings_only",
+      "model": "gradient_boosting",
+      "parameters": "{\"max_iter\": 100, \"max_leaf_nodes\": 7}",
+      "folds": 3,
+      "mean_log_loss": 0.7973874569934808,
+      "std_log_loss": 0.013495491115042122,
+      "pooled_log_loss": 0.7971635761896491,
+      "mean_accuracy": 0.6726228478062093
+    },
+    {
+      "feature_set": "ratings_only",
+      "model": "logistic_regression",
+      "parameters": "{\"C\": 0.1}",
+      "folds": 3,
+      "mean_log_loss": 0.7908225943105278,
+      "std_log_loss": 0.011605671384538245,
+      "pooled_log_loss": 0.790419501521369,
+      "mean_accuracy": 0.675975897858898
+    },
+    {
+      "feature_set": "ratings_only",
+      "model": "random_forest",
+      "parameters": "{\"max_depth\": 5, \"min_samples_leaf\": 10}",
+      "folds": 3,
+      "mean_log_loss": 0.7946175868418868,
+      "std_log_loss": 0.011771561004223082,
+      "pooled_log_loss": 0.7942728782161989,
+      "mean_accuracy": 0.6743267537716814
+    },
+    {
+      "feature_set": "ratings_plus_absolute",
+      "model": "frequency_baseline",
+      "parameters": "{}",
+      "folds": 3,
+      "mean_log_loss": 0.9162259097276668,
+      "std_log_loss": 0.020428121772890117,
+      "pooled_log_loss": 0.9155315865902184,
+      "mean_accuracy": 0.4881712973204631
+    },
+    {
+      "feature_set": "ratings_plus_absolute",
+      "model": "gradient_boosting",
+      "parameters": "{\"max_iter\": 100, \"max_leaf_nodes\": 7}",
+      "folds": 3,
+      "mean_log_loss": 0.7975222212039775,
+      "std_log_loss": 0.014265805377932548,
+      "pooled_log_loss": 0.7972670424887434,
+      "mean_accuracy": 0.6727554672176881
+    },
+    {
+      "feature_set": "ratings_plus_absolute",
+      "model": "logistic_regression",
+      "parameters": "{\"C\": 0.1}",
+      "folds": 3,
+      "mean_log_loss": 0.7910023528602826,
+      "std_log_loss": 0.01316428326796976,
+      "pooled_log_loss": 0.7905737686784541,
+      "mean_accuracy": 0.6756799960982826
+    },
+    {
+      "feature_set": "ratings_plus_absolute",
+      "model": "random_forest",
+      "parameters": "{\"max_depth\": 5, \"min_samples_leaf\": 10}",
+      "folds": 3,
+      "mean_log_loss": 0.797117057831125,
+      "std_log_loss": 0.014302549754071256,
+      "pooled_log_loss": 0.7967162479016126,
+      "mean_accuracy": 0.6745257391940663
+    },
+    {
+      "feature_set": "ratings_plus_round",
+      "model": "frequency_baseline",
+      "parameters": "{}",
+      "folds": 3,
+      "mean_log_loss": 0.9162259097276668,
+      "std_log_loss": 0.020428121772890117,
+      "pooled_log_loss": 0.9155315865902184,
+      "mean_accuracy": 0.4881712973204631
+    },
+    {
+      "feature_set": "ratings_plus_round",
+      "model": "gradient_boosting",
+      "parameters": "{\"max_iter\": 100, \"max_leaf_nodes\": 7}",
+      "folds": 3,
+      "mean_log_loss": 0.797256521638393,
+      "std_log_loss": 0.012997108391242535,
+      "pooled_log_loss": 0.7969942276986476,
+      "mean_accuracy": 0.6729480997050706
+    },
+    {
+      "feature_set": "ratings_plus_round",
+      "model": "logistic_regression",
+      "parameters": "{\"C\": 0.1}",
+      "folds": 3,
+      "mean_log_loss": 0.7909664177666321,
+      "std_log_loss": 0.011638648000795542,
+      "pooled_log_loss": 0.7905993710933298,
+      "mean_accuracy": 0.6758279469785902
+    },
+    {
+      "feature_set": "ratings_plus_round",
+      "model": "random_forest",
+      "parameters": "{\"max_depth\": 5, \"min_samples_leaf\": 10}",
+      "folds": 3,
+      "mean_log_loss": 0.7961138328981766,
+      "std_log_loss": 0.012475852243958327,
+      "pooled_log_loss": 0.7957252847636114,
+      "mean_accuracy": 0.6748496782935156
+    }
+  ],
+  "limitations": "Three overlapping-training folds from five previously explored events. October 20 is validation, not a separate held-out test. Scores used for model selection are not an unbiased final test. Fold standard deviation is descriptive, not a confidence interval.",
+  "history_policy": "Only completed games before prediction. Earlier validation-round games may supply historical ratings; model parameters remain fixed within each validation event."
+}

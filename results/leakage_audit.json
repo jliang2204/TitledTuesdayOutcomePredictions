@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "games_checked": 10799,
+  "features_checked": [
+    "rating_difference",
+    "average_rating",
+    "absolute_rating_difference",
+    "white_score_before_round",
+    "black_score_before_round",
+    "round"
+  ],
+  "checks": [
+    "strictly prior rating timestamps",
+    "earlier-round completed game scores",
+    "event-disjoint chronological splits",
+    "all exported feature values"
+  ],
+  "rating_missing_rows": 749
+}

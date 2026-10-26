@@ -1,0 +1,142 @@
+{
+  "metric": "multiclass_log_loss",
+  "seed": 42,
+  "experiment": "simple",
+  "feature_sets": {
+    "ratings_only": [
+      "rating_difference",
+      "average_rating"
+    ],
+    "ratings_plus_absolute": [
+      "rating_difference",
+      "average_rating",
+      "absolute_rating_difference"
+    ],
+    "ratings_plus_round": [
+      "rating_difference",
+      "average_rating",
+      "round"
+    ]
+  },
+  "train_dates": [
+    "2026-09-22",
+    "2026-09-29",
+    "2026-10-06"
+  ],
+  "validation_date": "2026-10-13",
+  "train_rows": 6776,
+  "validation_rows": 2058,
+  "test_evaluated": false,
+  "data_sha256": "32307a18af81929cd552467ee3e1e06c998d26e04b7dc6b91841c5aee217cf56",
+  "best_by_model": [
+    {
+      "feature_set": "ratings_only",
+      "model": "frequency_baseline",
+      "parameters": {},
+      "validation_log_loss": 0.9355562071453811,
+      "validation_accuracy": 0.4815354713313897
+    },
+    {
+      "feature_set": "ratings_only",
+      "model": "gradient_boosting",
+      "parameters": {
+        "max_leaf_nodes": 7,
+        "max_iter": 100
+      },
+      "validation_log_loss": 0.821156291350136,
+      "validation_accuracy": 0.6618075801749271
+    },
+    {
+      "feature_set": "ratings_only",
+      "model": "logistic_regression",
+      "parameters": {
+        "C": 10.0
+      },
+      "validation_log_loss": 0.8111225178451192,
+      "validation_accuracy": 0.6647230320699709
+    },
+    {
+      "feature_set": "ratings_only",
+      "model": "random_forest",
+      "parameters": {
+        "max_depth": 5,
+        "min_samples_leaf": 30
+      },
+      "validation_log_loss": 0.8157886544001285,
+      "validation_accuracy": 0.6642371234207969
+    },
+    {
+      "feature_set": "ratings_plus_absolute",
+      "model": "frequency_baseline",
+      "parameters": {},
+      "validation_log_loss": 0.9355562071453811,
+      "validation_accuracy": 0.4815354713313897
+    },
+    {
+      "feature_set": "ratings_plus_absolute",
+      "model": "gradient_boosting",
+      "parameters": {
+        "max_leaf_nodes": 7,
+        "max_iter": 100
+      },
+      "validation_log_loss": 0.8253774630972712,
+      "validation_accuracy": 0.6603498542274052
+    },
+    {
+      "feature_set": "ratings_plus_absolute",
+      "model": "logistic_regression",
+      "parameters": {
+        "C": 0.1
+      },
+      "validation_log_loss": 0.8148074560750208,
+      "validation_accuracy": 0.6647230320699709
+    },
+    {
+      "feature_set": "ratings_plus_absolute",
+      "model": "random_forest",
+      "parameters": {
+        "max_depth": 5,
+        "min_samples_leaf": 30
+      },
+      "validation_log_loss": 0.8214486759704122,
+      "validation_accuracy": 0.6637512147716229
+    },
+    {
+      "feature_set": "ratings_plus_round",
+      "model": "frequency_baseline",
+      "parameters": {},
+      "validation_log_loss": 0.9355562071453811,
+      "validation_accuracy": 0.4815354713313897
+    },
+    {
+      "feature_set": "ratings_plus_round",
+      "model": "gradient_boosting",
+      "parameters": {
+        "max_leaf_nodes": 7,
+        "max_iter": 100
+      },
+      "validation_log_loss": 0.8210610338060917,
+      "validation_accuracy": 0.6608357628765792
+    },
+    {
+      "feature_set": "ratings_plus_round",
+      "model": "logistic_regression",
+      "parameters": {
+        "C": 0.1
+      },
+      "validation_log_loss": 0.8123458804465926,
+      "validation_accuracy": 0.6642371234207969
+    },
+    {
+      "feature_set": "ratings_plus_round",
+      "model": "random_forest",
+      "parameters": {
+        "max_depth": 5,
+        "min_samples_leaf": 10
+      },
+      "validation_log_loss": 0.8191858982330671,
+      "validation_accuracy": 0.6642371234207969
+    }
+  ],
+  "note": "Identical candidate grids; preprocessing fitted on training only. No additional history features. Existing final-model artifacts are unchanged."
+}

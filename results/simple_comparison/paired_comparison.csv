@@ -1,0 +1,25 @@
+reference_features,alternative_features,model,parameters,reference_log_loss,alternative_log_loss,alternative_minus_reference
+ratings_only,ratings_plus_absolute,frequency_baseline,{},0.9355562071453811,0.9355562071453811,0.0
+ratings_only,ratings_plus_absolute,logistic_regression,{'C': 0.1},0.8111431705321761,0.8148074560750208,0.003664285542844703
+ratings_only,ratings_plus_absolute,logistic_regression,{'C': 1.0},0.8111241692269052,0.8148789580470817,0.0037547888201764357
+ratings_only,ratings_plus_absolute,logistic_regression,{'C': 10.0},0.8111225178451192,0.8148865905060465,0.0037640726609272646
+ratings_only,ratings_plus_absolute,random_forest,"{'max_depth': 5, 'min_samples_leaf': 10}",0.8162578529801393,0.8216652184374911,0.005407365457351765
+ratings_only,ratings_plus_absolute,random_forest,"{'max_depth': 5, 'min_samples_leaf': 30}",0.8157886544001285,0.8214486759704122,0.005660021570283669
+ratings_only,ratings_plus_absolute,random_forest,"{'max_depth': 10, 'min_samples_leaf': 10}",0.825075551121479,0.8298918581374722,0.004816307015993226
+ratings_only,ratings_plus_absolute,random_forest,"{'max_depth': 10, 'min_samples_leaf': 30}",0.8209452271670409,0.825084709318483,0.004139482151442109
+ratings_only,ratings_plus_absolute,gradient_boosting,"{'max_leaf_nodes': 7, 'max_iter': 100}",0.821156291350136,0.8253774630972712,0.004221171747135211
+ratings_only,ratings_plus_absolute,gradient_boosting,"{'max_leaf_nodes': 7, 'max_iter': 200}",0.8283973592633767,0.8346938763926001,0.006296517129223411
+ratings_only,ratings_plus_absolute,gradient_boosting,"{'max_leaf_nodes': 15, 'max_iter': 100}",0.8297209604490162,0.8324312536012612,0.0027102931522450247
+ratings_only,ratings_plus_absolute,gradient_boosting,"{'max_leaf_nodes': 15, 'max_iter': 200}",0.8418002032928948,0.8485696397885961,0.006769436495701275
+ratings_only,ratings_plus_round,frequency_baseline,{},0.9355562071453811,0.9355562071453811,0.0
+ratings_only,ratings_plus_round,logistic_regression,{'C': 0.1},0.8111431705321761,0.8123458804465926,0.001202709914416511
+ratings_only,ratings_plus_round,logistic_regression,{'C': 1.0},0.8111241692269052,0.8123464445787185,0.0012222753518132956
+ratings_only,ratings_plus_round,logistic_regression,{'C': 10.0},0.8111225178451192,0.8123467660672244,0.0012242482221052065
+ratings_only,ratings_plus_round,random_forest,"{'max_depth': 5, 'min_samples_leaf': 10}",0.8162578529801393,0.8191858982330671,0.00292804525292778
+ratings_only,ratings_plus_round,random_forest,"{'max_depth': 5, 'min_samples_leaf': 30}",0.8157886544001285,0.8202419747328367,0.004453320332708177
+ratings_only,ratings_plus_round,random_forest,"{'max_depth': 10, 'min_samples_leaf': 10}",0.825075551121479,0.8286276768462195,0.003552125724740507
+ratings_only,ratings_plus_round,random_forest,"{'max_depth': 10, 'min_samples_leaf': 30}",0.8209452271670409,0.8236298972172079,0.0026846700501670373
+ratings_only,ratings_plus_round,gradient_boosting,"{'max_leaf_nodes': 7, 'max_iter': 100}",0.821156291350136,0.8210610338060917,-9.525754404426934e-05
+ratings_only,ratings_plus_round,gradient_boosting,"{'max_leaf_nodes': 7, 'max_iter': 200}",0.8283973592633767,0.830199129032738,0.0018017697693613055
+ratings_only,ratings_plus_round,gradient_boosting,"{'max_leaf_nodes': 15, 'max_iter': 100}",0.8297209604490162,0.8366770722645628,0.006956111815546562
+ratings_only,ratings_plus_round,gradient_boosting,"{'max_leaf_nodes': 15, 'max_iter': 200}",0.8418002032928948,0.8565466839586976,0.014746480665802753

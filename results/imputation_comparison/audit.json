@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "folds": [
+    {
+      "fold": 1,
+      "median": 2742.0,
+      "training_games": 4523,
+      "validation_games": 2253
+    },
+    {
+      "fold": 2,
+      "median": 2742.0,
+      "training_games": 6776,
+      "validation_games": 2058
+    },
+    {
+      "fold": 3,
+      "median": 2741.0,
+      "training_games": 8834,
+      "validation_games": 1965
+    }
+  ],
+  "reproduced_logistic_fits": 9,
+  "checks": [
+    "Independent player-first arithmetic on every train/validation row",
+    "Observed player ratings preserved; only missing values replaced",
+    "Median and scaling fitted only on each fold's training data",
+    "Validation perturbations cannot alter fitted median",
+    "Nine logistic fold results reproduced from fresh pipeline fits"
+  ]
+}

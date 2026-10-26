@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "games": 10799,
+  "median_rating": 2744.0,
+  "features": [
+    "rating_difference",
+    "average_rating"
+  ],
+  "fold_results_reproduced": 108,
+  "checks": [
+    "Final imputation and scaling fit all five declared training events",
+    "All exported model features match independent NumPy calculations",
+    "Saved pipeline accepts historical inputs and produces valid probabilities",
+    "All 108 validation fits reproduce audited player-first comparison"
+  ],
+  "evaluation_note": "Final refit uses all five events; probabilities checked for integrity only, not reported as test performance."
+}

@@ -1,0 +1,105 @@
+{
+  "metric": "multiclass_log_loss",
+  "seed": 42,
+  "feature_sets": {
+    "with_scores": [
+      "rating_difference",
+      "average_rating",
+      "absolute_rating_difference",
+      "white_score_before_round",
+      "black_score_before_round",
+      "round"
+    ],
+    "without_scores": [
+      "rating_difference",
+      "average_rating",
+      "absolute_rating_difference",
+      "round"
+    ]
+  },
+  "train_dates": [
+    "2026-09-22",
+    "2026-09-29",
+    "2026-10-06"
+  ],
+  "validation_date": "2026-10-13",
+  "train_rows": 6776,
+  "validation_rows": 2058,
+  "test_evaluated": false,
+  "data_sha256": "32307a18af81929cd552467ee3e1e06c998d26e04b7dc6b91841c5aee217cf56",
+  "best_by_model": [
+    {
+      "feature_set": "with_scores",
+      "model": "frequency_baseline",
+      "parameters": {},
+      "validation_log_loss": 0.9355562071453811,
+      "validation_accuracy": 0.4815354713313897
+    },
+    {
+      "feature_set": "with_scores",
+      "model": "gradient_boosting",
+      "parameters": {
+        "max_leaf_nodes": 7,
+        "max_iter": 100
+      },
+      "validation_log_loss": 0.8221267086771719,
+      "validation_accuracy": 0.6593780369290574
+    },
+    {
+      "feature_set": "with_scores",
+      "model": "logistic_regression",
+      "parameters": {
+        "C": 0.1
+      },
+      "validation_log_loss": 0.8150715777119518,
+      "validation_accuracy": 0.6637512147716229
+    },
+    {
+      "feature_set": "with_scores",
+      "model": "random_forest",
+      "parameters": {
+        "max_depth": 5,
+        "min_samples_leaf": 30
+      },
+      "validation_log_loss": 0.8196072898742495,
+      "validation_accuracy": 0.6647230320699709
+    },
+    {
+      "feature_set": "without_scores",
+      "model": "frequency_baseline",
+      "parameters": {},
+      "validation_log_loss": 0.9355562071453811,
+      "validation_accuracy": 0.4815354713313897
+    },
+    {
+      "feature_set": "without_scores",
+      "model": "gradient_boosting",
+      "parameters": {
+        "max_leaf_nodes": 7,
+        "max_iter": 100
+      },
+      "validation_log_loss": 0.8242536404457588,
+      "validation_accuracy": 0.6588921282798834
+    },
+    {
+      "feature_set": "without_scores",
+      "model": "logistic_regression",
+      "parameters": {
+        "C": 0.1
+      },
+      "validation_log_loss": 0.8148049863181899,
+      "validation_accuracy": 0.6647230320699709
+    },
+    {
+      "feature_set": "without_scores",
+      "model": "random_forest",
+      "parameters": {
+        "max_depth": 5,
+        "min_samples_leaf": 30
+      },
+      "validation_log_loss": 0.8168006389650085,
+      "validation_accuracy": 0.6642371234207969
+    }
+  ],
+  "note": "Round is retained in both sets. Prior games played is not included. Identical candidate grids; preprocessing fitted on training only. Existing final-model artifacts are unchanged."
+}
