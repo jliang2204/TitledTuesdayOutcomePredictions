@@ -70,6 +70,7 @@ I think the 2 feature Logistic Regression model is able to generalize the probab
 The AI Transcript can be found in agent_transcript.md
 
 **Time breakdown**
+
 I estimate spending approximately 1 hour and 45 minutes total:
 
    - Planning and data collection: 15 minutes
