@@ -65,6 +65,10 @@ Initially, the ratings provided in the game's PGN and API records were used, but
 **Honest Model Overview**
 I think the 2 feature Logistic Regression model is able to generalize the probabilities of white's outcomes between two specific ratings from this Titled Tuesday dataset decently but has a lot of limitations. The main limitation is that the model is not provided any features that give any sort of history of each player about their playstyle or number of games played, for instance a 2600 that has 3000 games played can be very different from a 2600 that has 5 games played, but this information is not captured in the model. Missing player rating data (which was about 6.9% of the dataset) was also accounted for by using a median of historical ratings observed in the training data, which is not entirely accurate. The mean fold log loss was 0.790823 with a mean fold accuracy of 67.60%. The frequency baseline log loss averaged 0.916226. Despite this 13.69% improvement in log loss, the limitations described above still leave the model not a perfect representation.
 
+**AI Transcript**
+
+The AI Transcript can be found in agent_transcript.md
+
 **Time breakdown**
 I estimate spending approximately 1 hour and 45 minutes total:
 
